@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Employees Manager/Pods-Employees Manager-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework

@@ -8,6 +8,12 @@
 import UIKit
 
 class BaseButton:UIButton {
+    var title:String? {
+        didSet {
+            guard let title else{return}
+            setTitle(title, for: .normal)
+        }
+    }
     var titleColor:UIColor? {
         didSet {
             guard let titleColor else{return}
@@ -35,5 +41,6 @@ class BaseButton:UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = self.frame.height / 2
+        //setTitle(title, for: .normal)
     }
 }

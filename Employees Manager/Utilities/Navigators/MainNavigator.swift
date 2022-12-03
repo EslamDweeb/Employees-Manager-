@@ -12,7 +12,7 @@ class MainNavigator:Navigator{
     var coordinator: Coordinator
     
     enum Destination {
-        case empolyeeList
+        case createOrUpdateEmployee(createEmployee:Bool,employee:Employee?)
     }
     
     required init(coordinator: Coordinator) {
@@ -21,9 +21,9 @@ class MainNavigator:Navigator{
     
     func viewController(for destination: Destination) -> UIViewController {
         switch destination{
-        case .empolyeeList:
-            let viewModel  = EmployeesListVCViewModel()
-            return EmpolyeeListVC(viewModel: viewModel, coordinator: coordinator)
+        case .createOrUpdateEmployee(let createEmployee,let employee):
+            let viewModel  = AddOrUpdateEmployeeViewModel(createNewEmployee: createEmployee, employee: employee)
+            return AddOrUpdateEmployeeVC(viewModel: viewModel, coordinator: coordinator)
         }
     }
 }

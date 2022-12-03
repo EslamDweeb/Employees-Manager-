@@ -3,8 +3,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-@available(iOS 13.0, *)
+//@available(iOS 13.0, *)
 extension UIViewController {
     
     func createAlert(title: String? = nil,erroMessage: String,createButton:Bool? = true,completion: (() -> Void)? = nil) {
@@ -61,18 +62,17 @@ extension UIViewController {
         return text
     }
     
-//    func startActivityIndicator(){
-//        ProgressHUD.animationType = .systemActivityIndicator
-//        ProgressHUD.colorHUD = .purpleColor2
-//        ProgressHUD.colorBackground = .lightGray
-//        ProgressHUD.colorAnimation = .darkGray
-//        ProgressHUD.colorProgress = .darkGray
-//        ProgressHUD.colorStatus = .systemGray
-//        ProgressHUD.show()
-//    }
-//    @available(iOS 13.0, *)
-//    func stopActivityIndicator(){
-//        ProgressHUD.dismiss()
-//    }
+    func showIndicator(withTitle title: String, and description: String) {
+        let indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
+        indicator.label.text = title
+        indicator.isUserInteractionEnabled = false
+        indicator.detailsLabel.text = description
+        indicator.show(animated: true)
+        self.view.isUserInteractionEnabled = false
+    }
+    func hideIndicator() {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        self.view.isUserInteractionEnabled = true
+    }
     
 }

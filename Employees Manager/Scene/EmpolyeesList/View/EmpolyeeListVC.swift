@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EmpolyeeListVC: BaseWireFrame<EmployeesListVCViewModel> {
 
@@ -18,10 +19,40 @@ class EmpolyeeListVC: BaseWireFrame<EmployeesListVCViewModel> {
         super.viewDidLoad()
         setupAddNewEmpolyeeButton()
         setupTableView()
+       // viewModel.viewDidLod()
+        bindCreateEmployeeBtn()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewDidLod()
+    }
     override func bind(viewModel: EmployeesListVCViewModel) {
         print("here")
+        viewModel.isLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                self.showIndicator(withTitle: "", and: "")
+            } else {
+                self.hideIndicator()
+            }
+        }).disposed(by: disposeBag)
+        
+        
+        viewModel.hasErrInTxt.subscribe {[weak self] msg in
+            guard let self = self else{return}
+            guard let msg = msg.element else{return}
+            self.createAlert(erroMessage: msg)
+        } .disposed(by: disposeBag)
+        
+        viewModel.employeesArr.subscribe {[weak self] employees in
+            guard let self else{return}
+            guard let employees = employees.element else{return}
+            if employees.isEmpty {
+                self.employeeTableView.backgroundView = EmptyStatBG(title: "No Employees Data please try to add one")
+            }else{
+                self.employeeTableView.backgroundView = nil
+                print(employees)
+            }
+        }.disposed(by: disposeBag)
     }
     
     
@@ -31,21 +62,38 @@ class EmpolyeeListVC: BaseWireFrame<EmployeesListVCViewModel> {
     }
     private func setupTableView(){
         employeeTableView.registerCellNib(cellClass: EmployeeTableCell.self)
-        employeeTableView.delegate = self
-        employeeTableView.dataSource = self
+        employeeTableView.rx.setDelegate(self).disposed(by: disposeBag)
+
         employeeTableView.separatorStyle = .none
+        
+        viewModel.employeesArr.asObservable().bind(to: employeeTableView.rx.items(cellIdentifier: EmployeeTableCell.getIdentifier(),cellType: EmployeeTableCell.self)){[weak self] index,model,cell in
+            guard let self else{return}
+            cell.employeeNameLbl.text = model.fullName
+            cell.employeeEmailLbl.text = model.email
+            if model.image != nil{
+                cell.employeeImageView.sd_setImage(with: URL(string: model.image ?? ""))
+            }
+            cell.deleteBtnTapped = {
+                self.viewModel.deleteEmployee(index)
+            }
+            cell.editBtnTapped = {
+                self.coordinator.main.navigate(to: .createOrUpdateEmployee(createEmployee: false, employee: model))
+            }
+        }.disposed(by: disposeBag)
+        
+    }
+    
+    
+    //MARK: - helper functions
+    private func bindCreateEmployeeBtn(){
+        addNewEmployeeBtn.rx.tap.subscribe {[weak self] _ in
+            guard let self = self else{return}
+            self.coordinator.main.navigate(to: .createOrUpdateEmployee(createEmployee: true, employee: nil))
+        }.disposed(by: disposeBag)
     }
 }
 
-extension EmpolyeeListVC:UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableCell.getIdentifier(), for: indexPath) as! EmployeeTableCell
-        return cell
-    }
+extension EmpolyeeListVC:UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130

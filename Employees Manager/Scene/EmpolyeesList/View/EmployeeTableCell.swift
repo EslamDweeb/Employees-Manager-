@@ -15,6 +15,10 @@ class EmployeeTableCell: UITableViewCell {
     @IBOutlet weak var deleteBtn: BaseButton!
     @IBOutlet weak var employeeImageView: UIImageView!
     
+    
+    var editBtnTapped:(()->Void)?
+    var deleteBtnTapped:(()->Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUIComponents()
@@ -36,5 +40,11 @@ class EmployeeTableCell: UITableViewCell {
 
         employeeImageView.cornerRadius = 20
         employeeImageView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+    }
+    @IBAction func editeBtnTaappedAction(_ sender: Any) {
+        self.editBtnTapped?()
+    }
+    @IBAction func deleteBtnTapeedAction(_ sender: Any) {
+        self.deleteBtnTapped?()
     }
 }

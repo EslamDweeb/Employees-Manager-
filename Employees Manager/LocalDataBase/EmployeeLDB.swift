@@ -45,19 +45,18 @@ class EmployeeLDB {
             print("Unable to create table")
         }
     }
-    func addContact(eFullName: String, eEmail: String?, eImage: String?) -> Int64? {
+    func addEmployee(eFullName: String, eEmail: String?, eImage: String?,completionHandeler: @escaping (_ sucess:String?,_ error:Error?)->Void) {
         do {
             let insert = employees.insert(fullName <- eFullName, email <- eEmail, image <- eImage)
             let id = try db!.run(insert)
             print(insert.description)
-            return id
+            completionHandeler("Create Employee Successfully",nil)
         } catch {
-            print("Insert failed")
-            return -1
+           completionHandeler(nil,error)
         }
     }
     
-    func getEmployees() -> [Employee] {
+    func getEmployees(completionHandeler: @escaping (_ employees:[Employee]?,_ error:Error?)->Void) {
         var employees = [Employee]()
 
         do {
@@ -65,22 +64,22 @@ class EmployeeLDB {
                 employees.append(Employee(id: employee[id], fullName: employee[fullName], email: employee[email], image: employee[image]))
             }
         } catch {
-            print("Select failed")
+           completionHandeler(nil,error)
         }
 
-        return employees
+       completionHandeler(employees,nil)
     }
-    func deleteContact(eid: Int64) -> Bool {
+    func deleteContact(eid:Int64,completionHandeler: @escaping (_ sucess:Bool?,_ error:Error?)->Void) {
         do {
             let employee = employees.filter(id == eid)
             try db!.run(employee.delete())
-            return true
+           completionHandeler(true,nil)
         } catch {
             print("Delete failed")
+            completionHandeler(nil,error)
         }
-        return false
     }
-    func updateContact(eid:Int64, newEmployee: Employee) -> Bool {
+    func updateContact(eid:Int64, newEmployee: Employee,completionHandeler: @escaping (_ sucess:String?,_ error:Error?)->Void){
         let employee = employees.filter(id == eid)
         do {
             let update = employee.update([
@@ -89,12 +88,11 @@ class EmployeeLDB {
                 image <- newEmployee.image
                 ])
             if try db!.run(update) > 0 {
-                return true
+                completionHandeler("Update Employee Successfully",nil)
             }
         } catch {
             print("Update failed: \(error)")
+            completionHandeler(nil,error)
         }
-
-        return false
     }
 }

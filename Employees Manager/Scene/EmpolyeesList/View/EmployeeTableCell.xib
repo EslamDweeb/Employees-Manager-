@@ -34,6 +34,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Edite">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="8"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="editeBtnTaappedAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZnO-Op-HC2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-pW-dVh" customClass="BaseButton" customModule="Employees_Manager" customModuleProvider="target">
                                         <rect key="frame" x="53.666666666666629" y="0.0" width="49.666666666666657" height="20"/>
@@ -44,6 +47,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Delete">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="8"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteBtnTapeedAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vSf-WK-AFg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

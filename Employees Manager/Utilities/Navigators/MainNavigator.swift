@@ -23,7 +23,7 @@ class MainNavigator:Navigator{
         switch destination{
         case .empolyeeList:
             let viewModel  = EmployeesListVCViewModel()
-            return LoginViewController(viewModel:viewModel,coordinator: coordinator)
+            return EmpolyeeListVC(viewModel: viewModel, coordinator: coordinator)
         }
     }
 }

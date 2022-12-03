@@ -26,6 +26,10 @@
 		C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11394293B644800B86150 /* EmployeesListVCViewModel.swift */; };
 		C3E11398293B652700B86150 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C3E11397293B652700B86150 /* RxCocoa */; };
 		C3E1139A293B652700B86150 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3E11399293B652700B86150 /* RxSwift */; };
+		C3E1139C293B68EA00B86150 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1139B293B68EA00B86150 /* BaseButton.swift */; };
+		C3E1139F293B6FE800B86150 /* EmployeeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1139D293B6FE800B86150 /* EmployeeTableCell.swift */; };
+		C3E113A0293B6FE800B86150 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1139E293B6FE800B86150 /* EmployeeTableCell.xib */; };
+		C3E113A2293B76ED00B86150 /* UITableView_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E113A1293B76ED00B86150 /* UITableView_Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		C3E11387293B634600B86150 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C3E11388293B634600B86150 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		C3E11394293B644800B86150 /* EmployeesListVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListVCViewModel.swift; sourceTree = "<group>"; };
+		C3E1139B293B68EA00B86150 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		C3E1139D293B6FE800B86150 /* EmployeeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableCell.swift; sourceTree = "<group>"; };
+		C3E1139E293B6FE800B86150 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
+		C3E113A1293B76ED00B86150 /* UITableView_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView_Ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		C3E1136B293B5FC800B86150 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				C3E113A1293B76ED00B86150 /* UITableView_Ext.swift */,
 				C3E11373293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift */,
 				C3E1136C293B5FF400B86150 /* UIView_Extention.swift */,
 				C3E1136D293B5FF400B86150 /* UIViewController_EXt.swift */,
@@ -124,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E11371293B619E00B86150 /* EmptyStateBG.swift */,
+				C3E1139B293B68EA00B86150 /* BaseButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 			children = (
 				C3E11376293B62CC00B86150 /* EmpolyeeListVC.swift */,
 				C3E11377293B62CC00B86150 /* EmpolyeeListVC.xib */,
+				C3E1139D293B6FE800B86150 /* EmployeeTableCell.swift */,
+				C3E1139E293B6FE800B86150 /* EmployeeTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +287,7 @@
 			files = (
 				C3E11379293B62CC00B86150 /* EmpolyeeListVC.xib in Resources */,
 				C3E11362293B5C6700B86150 /* LaunchScreen.storyboard in Resources */,
+				C3E113A0293B6FE800B86150 /* EmployeeTableCell.xib in Resources */,
 				C3E1135F293B5C6700B86150 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,14 +300,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E1136F293B5FF400B86150 /* UIViewController_EXt.swift in Sources */,
+				C3E1139C293B68EA00B86150 /* BaseButton.swift in Sources */,
 				C3E11356293B5C6600B86150 /* AppDelegate.swift in Sources */,
 				C3E11372293B619E00B86150 /* EmptyStateBG.swift in Sources */,
 				C3E1138A293B634600B86150 /* BaseWireFrame.swift in Sources */,
+				C3E113A2293B76ED00B86150 /* UITableView_Ext.swift in Sources */,
 				C3E11390293B634600B86150 /* Coordinator.swift in Sources */,
 				C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */,
 				C3E11374293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift in Sources */,
 				C3E11378293B62CC00B86150 /* EmpolyeeListVC.swift in Sources */,
 				C3E1136E293B5FF400B86150 /* UIView_Extention.swift in Sources */,
+				C3E1139F293B6FE800B86150 /* EmployeeTableCell.swift in Sources */,
 				C3E1138C293B634600B86150 /* ImagePicker.swift in Sources */,
 				C3E11391293B634600B86150 /* Navigator.swift in Sources */,
 				C3E11389293B634600B86150 /* AppCoordinator.swift in Sources */,

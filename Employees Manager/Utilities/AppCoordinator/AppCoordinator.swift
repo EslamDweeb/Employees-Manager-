@@ -16,7 +16,7 @@ class AppCoordinator:Coordinator{
     
     
     lazy var employeeListVC: UIViewController = {
-        return UINavigationController(rootViewController: EmpolyeeListVC.loadController())
+        return UINavigationController(rootViewController: EmpolyeeListVC(viewModel: EmployeesListVCViewModel(), coordinator: self))
     }()
     
     var navigationController:UINavigationController?{
@@ -26,8 +26,6 @@ class AppCoordinator:Coordinator{
        }else{
            return nil
        }
-       //  let navigation = UINavigationController(rootViewController: splahScreen)
-            
     }
     var rootViewController:UIViewController {
         return employeeListVC

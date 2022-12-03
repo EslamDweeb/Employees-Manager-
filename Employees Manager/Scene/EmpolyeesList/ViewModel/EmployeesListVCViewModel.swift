@@ -6,8 +6,13 @@
 //
 
 import Foundation
-
+import RxSwift
+import RxCocoa
 
 class EmployeesListVCViewModel:ViewModel{
+    
+    var hasErrInTxt:PublishSubject<String> = .init()
+    var isLoading:BehaviorRelay<Bool> = .init(value: false)
+    
     
 }

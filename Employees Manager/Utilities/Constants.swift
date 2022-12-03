@@ -8,3 +8,12 @@
 import Foundation
 
 
+enum ColorName:String{
+    case prim = "PrimColor"
+}
+
+enum ViewTitles:String {
+    case addNewEmployee = "Add Employee"
+    case edit = "Edit"
+    case delete = "Delete"
+}

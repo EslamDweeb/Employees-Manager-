@@ -30,6 +30,9 @@
 		C3E1139F293B6FE800B86150 /* EmployeeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1139D293B6FE800B86150 /* EmployeeTableCell.swift */; };
 		C3E113A0293B6FE800B86150 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1139E293B6FE800B86150 /* EmployeeTableCell.xib */; };
 		C3E113A2293B76ED00B86150 /* UITableView_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E113A1293B76ED00B86150 /* UITableView_Ext.swift */; };
+		C3E113A6293B82F100B86150 /* AddOrUpdateEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E113A4293B82F100B86150 /* AddOrUpdateEmployeeVC.swift */; };
+		C3E113A7293B82F100B86150 /* AddOrUpdateEmployeeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E113A5293B82F100B86150 /* AddOrUpdateEmployeeVC.xib */; };
+		C3E113AB293B831A00B86150 /* AddOrUpdateEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E113AA293B831A00B86150 /* AddOrUpdateEmployeeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		C3E1139D293B6FE800B86150 /* EmployeeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableCell.swift; sourceTree = "<group>"; };
 		C3E1139E293B6FE800B86150 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
 		C3E113A1293B76ED00B86150 /* UITableView_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView_Ext.swift; sourceTree = "<group>"; };
+		C3E113A4293B82F100B86150 /* AddOrUpdateEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrUpdateEmployeeVC.swift; sourceTree = "<group>"; };
+		C3E113A5293B82F100B86150 /* AddOrUpdateEmployeeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrUpdateEmployeeVC.xib; sourceTree = "<group>"; };
+		C3E113AA293B831A00B86150 /* AddOrUpdateEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrUpdateEmployeeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		C3E1136A293B5F9A00B86150 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				C3E113A3293B82B700B86150 /* AddOrUpdateEmployee */,
 				C3E11375293B628C00B86150 /* EmpolyeesList */,
 			);
 			path = Scene;
@@ -220,6 +227,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C3E113A3293B82B700B86150 /* AddOrUpdateEmployee */ = {
+			isa = PBXGroup;
+			children = (
+				C3E113A9293B830000B86150 /* ViewModel */,
+				C3E113A8293B82F500B86150 /* View */,
+			);
+			path = AddOrUpdateEmployee;
+			sourceTree = "<group>";
+		};
+		C3E113A8293B82F500B86150 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3E113A4293B82F100B86150 /* AddOrUpdateEmployeeVC.swift */,
+				C3E113A5293B82F100B86150 /* AddOrUpdateEmployeeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3E113A9293B830000B86150 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C3E113AA293B831A00B86150 /* AddOrUpdateEmployeeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +321,7 @@
 				C3E11379293B62CC00B86150 /* EmpolyeeListVC.xib in Resources */,
 				C3E11362293B5C6700B86150 /* LaunchScreen.storyboard in Resources */,
 				C3E113A0293B6FE800B86150 /* EmployeeTableCell.xib in Resources */,
+				C3E113A7293B82F100B86150 /* AddOrUpdateEmployeeVC.xib in Resources */,
 				C3E1135F293B5C6700B86150 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,12 +335,14 @@
 			files = (
 				C3E1136F293B5FF400B86150 /* UIViewController_EXt.swift in Sources */,
 				C3E1139C293B68EA00B86150 /* BaseButton.swift in Sources */,
+				C3E113AB293B831A00B86150 /* AddOrUpdateEmployeeViewModel.swift in Sources */,
 				C3E11356293B5C6600B86150 /* AppDelegate.swift in Sources */,
 				C3E11372293B619E00B86150 /* EmptyStateBG.swift in Sources */,
 				C3E1138A293B634600B86150 /* BaseWireFrame.swift in Sources */,
 				C3E113A2293B76ED00B86150 /* UITableView_Ext.swift in Sources */,
 				C3E11390293B634600B86150 /* Coordinator.swift in Sources */,
 				C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */,
+				C3E113A6293B82F100B86150 /* AddOrUpdateEmployeeVC.swift in Sources */,
 				C3E11374293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift in Sources */,
 				C3E11378293B62CC00B86150 /* EmpolyeeListVC.swift in Sources */,
 				C3E1136E293B5FF400B86150 /* UIView_Extention.swift in Sources */,

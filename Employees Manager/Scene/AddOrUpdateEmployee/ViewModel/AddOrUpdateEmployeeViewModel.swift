@@ -35,7 +35,7 @@ class AddOrUpdateEmployeeViewModel:ViewModel,AddOrUpdateEmployeeViewModelInputs,
     var imagePath:BehaviorRelay<String?> = .init(value: nil)
     
     init(createNewEmployee:Bool,employee:Employee?){
-        self.createNewEmployee.onNext(createNewEmployee)
+        self.createNewEmployee.accept(createNewEmployee)
         self.employeeToUpdate.accept(employee)
     }
     
@@ -54,7 +54,7 @@ class AddOrUpdateEmployeeViewModel:ViewModel,AddOrUpdateEmployeeViewModelInputs,
             if createNewEmployee.value {
                 callAddEmplyeeFromLDB(name: fullName.value, email: email.value, image: imagePath.value)
             }else{
-                cal
+                callUpdateEmployeFormLDB(id: employeeToUpdate.value!.id, employee: Employee(id: employeeToUpdate.value!.id, fullName: fullName.value, email: email.value, image: imagePath.value))
             }
         }
     }

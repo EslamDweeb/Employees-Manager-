@@ -19,6 +19,7 @@
                 <outlet property="employeeImageView" destination="SH8-FP-xBr" id="xUI-Yf-FNk"/>
                 <outlet property="skillAutoCompleteTxtField" destination="Idv-sj-jRv" id="TDh-xo-shw"/>
                 <outlet property="skillsCollectionView" destination="gxM-FE-GbY" id="XAx-9K-Ob8"/>
+                <outlet property="titleLabel" destination="ua3-tW-Anv" id="00t-en-1rC"/>
                 <outlet property="uploadPhotoBtn" destination="Her-ae-LsT" id="DJG-GK-iUX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

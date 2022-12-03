@@ -16,6 +16,7 @@ import RxCocoa
 //}
 class AddOrUpdateEmployeeVC: BaseWireFrame<AddOrUpdateEmployeeViewModel> {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createOrUpdateTitleLbl: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var uploadPhotoBtn: UIButton!
@@ -74,7 +75,9 @@ class AddOrUpdateEmployeeVC: BaseWireFrame<AddOrUpdateEmployeeViewModel> {
             if let employee {
                 self.employeeEmailTxtField.text = employee.email
                 self.employeeFullNameTxtField.text = employee.fullName
-                self.employeeImageView.sd_setImage(with: URL(string: employee.image ?? ""))
+                if let image = employee.image {
+                    self.employeeImageView.sd_setImage(with: URL(string: image))
+                }
             }
            
         }.disposed(by: disposeBag)
@@ -83,6 +86,7 @@ class AddOrUpdateEmployeeVC: BaseWireFrame<AddOrUpdateEmployeeViewModel> {
     private func setupAddorUpdateButton(title:String){
         createOrUpdateBtn.titleColor = .white
         createOrUpdateBtn.title = title
+        titleLabel.text = title
     }
 
 

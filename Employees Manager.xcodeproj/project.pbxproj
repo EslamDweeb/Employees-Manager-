@@ -16,6 +16,16 @@
 		C3E11374293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11373293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift */; };
 		C3E11378293B62CC00B86150 /* EmpolyeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11376293B62CC00B86150 /* EmpolyeeListVC.swift */; };
 		C3E11379293B62CC00B86150 /* EmpolyeeListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E11377293B62CC00B86150 /* EmpolyeeListVC.xib */; };
+		C3E11389293B634600B86150 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1137C293B634600B86150 /* AppCoordinator.swift */; };
+		C3E1138A293B634600B86150 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1137E293B634600B86150 /* BaseWireFrame.swift */; };
+		C3E1138B293B634600B86150 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1137F293B634600B86150 /* Constants.swift */; };
+		C3E1138C293B634600B86150 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11381293B634600B86150 /* ImagePicker.swift */; };
+		C3E1138F293B634600B86150 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11385293B634600B86150 /* MainNavigator.swift */; };
+		C3E11390293B634600B86150 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11387293B634600B86150 /* Coordinator.swift */; };
+		C3E11391293B634600B86150 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11388293B634600B86150 /* Navigator.swift */; };
+		C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11394293B644800B86150 /* EmployeesListVCViewModel.swift */; };
+		C3E11398293B652700B86150 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C3E11397293B652700B86150 /* RxCocoa */; };
+		C3E1139A293B652700B86150 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C3E11399293B652700B86150 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +40,14 @@
 		C3E11373293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+UIStackView+UILabel_Ext.swift"; sourceTree = "<group>"; };
 		C3E11376293B62CC00B86150 /* EmpolyeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpolyeeListVC.swift; sourceTree = "<group>"; };
 		C3E11377293B62CC00B86150 /* EmpolyeeListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmpolyeeListVC.xib; sourceTree = "<group>"; };
+		C3E1137C293B634600B86150 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C3E1137E293B634600B86150 /* BaseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
+		C3E1137F293B634600B86150 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C3E11381293B634600B86150 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C3E11385293B634600B86150 /* MainNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		C3E11387293B634600B86150 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C3E11388293B634600B86150 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		C3E11394293B644800B86150 /* EmployeesListVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListVCViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E1139A293B652700B86150 /* RxSwift in Frameworks */,
+				C3E11398293B652700B86150 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +82,7 @@
 		C3E11354293B5C6600B86150 /* Employees Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C3E1137A293B634600B86150 /* Utilities */,
 				C3E1136B293B5FC800B86150 /* Extentions */,
 				C3E11370293B60E100B86150 /* CustomViews */,
 				C3E1136A293B5F9A00B86150 /* Scene */,
@@ -110,10 +131,81 @@
 		C3E11375293B628C00B86150 /* EmpolyeesList */ = {
 			isa = PBXGroup;
 			children = (
+				C3E11393293B640D00B86150 /* ViewModel */,
+				C3E11392293B63C300B86150 /* View */,
+			);
+			path = EmpolyeesList;
+			sourceTree = "<group>";
+		};
+		C3E1137A293B634600B86150 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C3E11380293B634600B86150 /* Controllers */,
+				C3E1137F293B634600B86150 /* Constants.swift */,
+				C3E1137B293B634600B86150 /* AppCoordinator */,
+				C3E1137D293B634600B86150 /* BaseWireFrame */,
+				C3E11384293B634600B86150 /* Navigators */,
+				C3E11386293B634600B86150 /* Protocols */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C3E1137B293B634600B86150 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1137C293B634600B86150 /* AppCoordinator.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		C3E1137D293B634600B86150 /* BaseWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				C3E1137E293B634600B86150 /* BaseWireFrame.swift */,
+			);
+			path = BaseWireFrame;
+			sourceTree = "<group>";
+		};
+		C3E11380293B634600B86150 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3E11381293B634600B86150 /* ImagePicker.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3E11384293B634600B86150 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				C3E11385293B634600B86150 /* MainNavigator.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		C3E11386293B634600B86150 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C3E11387293B634600B86150 /* Coordinator.swift */,
+				C3E11388293B634600B86150 /* Navigator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C3E11392293B63C300B86150 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				C3E11376293B62CC00B86150 /* EmpolyeeListVC.swift */,
 				C3E11377293B62CC00B86150 /* EmpolyeeListVC.xib */,
 			);
-			path = EmpolyeesList;
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3E11393293B640D00B86150 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C3E11394293B644800B86150 /* EmployeesListVCViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +224,10 @@
 			dependencies = (
 			);
 			name = "Employees Manager";
+			packageProductDependencies = (
+				C3E11397293B652700B86150 /* RxCocoa */,
+				C3E11399293B652700B86150 /* RxSwift */,
+			);
 			productName = "Employees Manager";
 			productReference = C3E11352293B5C6600B86150 /* Employees Manager.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +256,9 @@
 				Base,
 			);
 			mainGroup = C3E11349293B5C6500B86150;
+			packageReferences = (
+				C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = C3E11353293B5C6600B86150 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,9 +289,17 @@
 				C3E1136F293B5FF400B86150 /* UIViewController_EXt.swift in Sources */,
 				C3E11356293B5C6600B86150 /* AppDelegate.swift in Sources */,
 				C3E11372293B619E00B86150 /* EmptyStateBG.swift in Sources */,
+				C3E1138A293B634600B86150 /* BaseWireFrame.swift in Sources */,
+				C3E11390293B634600B86150 /* Coordinator.swift in Sources */,
+				C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */,
 				C3E11374293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift in Sources */,
 				C3E11378293B62CC00B86150 /* EmpolyeeListVC.swift in Sources */,
 				C3E1136E293B5FF400B86150 /* UIView_Extention.swift in Sources */,
+				C3E1138C293B634600B86150 /* ImagePicker.swift in Sources */,
+				C3E11391293B634600B86150 /* Navigator.swift in Sources */,
+				C3E11389293B634600B86150 /* AppCoordinator.swift in Sources */,
+				C3E1138F293B634600B86150 /* MainNavigator.swift in Sources */,
+				C3E1138B293B634600B86150 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +507,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3E11397293B652700B86150 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C3E11399293B652700B86150 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C3E1134A293B5C6500B86150 /* Project object */;
 }

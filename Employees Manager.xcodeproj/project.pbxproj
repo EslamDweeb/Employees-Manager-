@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7C8924FFA51CA25DF569D6DB /* Pods_Employees_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A3C1960926A325F04D70DE /* Pods_Employees_Manager.framework */; };
+		C35BAC85293BD52D00CE5BB1 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C35BAC84293BD52D00CE5BB1 /* SQLite */; };
+		C35BAC88293BD55700CE5BB1 /* EmployeeLDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BAC87293BD55700CE5BB1 /* EmployeeLDB.swift */; };
+		C35BAC8B293BD9A200CE5BB1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BAC8A293BD9A200CE5BB1 /* Employee.swift */; };
 		C3E11356293B5C6600B86150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E11355293B5C6600B86150 /* AppDelegate.swift */; };
 		C3E1135F293B5C6700B86150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E1135E293B5C6700B86150 /* Assets.xcassets */; };
 		C3E11362293B5C6700B86150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3E11360293B5C6700B86150 /* LaunchScreen.storyboard */; };
@@ -40,6 +43,8 @@
 		4D9A024746D00B93176EB868 /* Pods-Employees Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employees Manager.debug.xcconfig"; path = "Target Support Files/Pods-Employees Manager/Pods-Employees Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		876EF7DE39A54639FBFEBEFD /* Pods-Employees Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employees Manager.release.xcconfig"; path = "Target Support Files/Pods-Employees Manager/Pods-Employees Manager.release.xcconfig"; sourceTree = "<group>"; };
 		B4A3C1960926A325F04D70DE /* Pods_Employees_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employees_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35BAC87293BD55700CE5BB1 /* EmployeeLDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLDB.swift; sourceTree = "<group>"; };
+		C35BAC8A293BD9A200CE5BB1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		C3E11352293B5C6600B86150 /* Employees Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employees Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E11355293B5C6600B86150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3E1135E293B5C6700B86150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35BAC85293BD52D00CE5BB1 /* SQLite in Frameworks */,
 				C3E1139A293B652700B86150 /* RxSwift in Frameworks */,
 				C3E11398293B652700B86150 /* RxCocoa in Frameworks */,
 				7C8924FFA51CA25DF569D6DB /* Pods_Employees_Manager.framework in Frameworks */,
@@ -88,7 +94,6 @@
 				4D9A024746D00B93176EB868 /* Pods-Employees Manager.debug.xcconfig */,
 				876EF7DE39A54639FBFEBEFD /* Pods-Employees Manager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -98,6 +103,22 @@
 				B4A3C1960926A325F04D70DE /* Pods_Employees_Manager.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C35BAC86293BD53A00CE5BB1 /* LocalDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				C35BAC87293BD55700CE5BB1 /* EmployeeLDB.swift */,
+			);
+			path = LocalDataBase;
+			sourceTree = "<group>";
+		};
+		C35BAC89293BD98900CE5BB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C35BAC8A293BD9A200CE5BB1 /* Employee.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C3E11349293B5C6500B86150 = {
@@ -121,6 +142,8 @@
 		C3E11354293B5C6600B86150 /* Employees Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C35BAC89293BD98900CE5BB1 /* Models */,
+				C35BAC86293BD53A00CE5BB1 /* LocalDataBase */,
 				C3E1137A293B634600B86150 /* Utilities */,
 				C3E1136B293B5FC800B86150 /* Extentions */,
 				C3E11370293B60E100B86150 /* CustomViews */,
@@ -299,6 +322,7 @@
 			packageProductDependencies = (
 				C3E11397293B652700B86150 /* RxCocoa */,
 				C3E11399293B652700B86150 /* RxSwift */,
+				C35BAC84293BD52D00CE5BB1 /* SQLite */,
 			);
 			productName = "Employees Manager";
 			productReference = C3E11352293B5C6600B86150 /* Employees Manager.app */;
@@ -329,7 +353,8 @@
 			);
 			mainGroup = C3E11349293B5C6500B86150;
 			packageReferences = (
-				C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C35BAC83293BD52D00CE5BB1 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = C3E11353293B5C6600B86150 /* Products */;
 			projectDirPath = "";
@@ -412,10 +437,12 @@
 				C3E11390293B634600B86150 /* Coordinator.swift in Sources */,
 				C3E11395293B644800B86150 /* EmployeesListVCViewModel.swift in Sources */,
 				C3E113A6293B82F100B86150 /* AddOrUpdateEmployeeVC.swift in Sources */,
+				C35BAC8B293BD9A200CE5BB1 /* Employee.swift in Sources */,
 				C3E11374293B621800B86150 /* UIButton+UIStackView+UILabel_Ext.swift in Sources */,
 				C3E11378293B62CC00B86150 /* EmpolyeeListVC.swift in Sources */,
 				C3E1136E293B5FF400B86150 /* UIView_Extention.swift in Sources */,
 				C3E1139F293B6FE800B86150 /* EmployeeTableCell.swift in Sources */,
+				C35BAC88293BD55700CE5BB1 /* EmployeeLDB.swift in Sources */,
 				C3E1138C293B634600B86150 /* ImagePicker.swift in Sources */,
 				C3E11391293B634600B86150 /* Navigator.swift in Sources */,
 				C3E11389293B634600B86150 /* AppCoordinator.swift in Sources */,
@@ -632,7 +659,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
+		C35BAC83293BD52D00CE5BB1 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+		C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -643,14 +678,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C35BAC84293BD52D00CE5BB1 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C35BAC83293BD52D00CE5BB1 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		C3E11397293B652700B86150 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 		C3E11399293B652700B86150 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = C3E11396293B652700B86150 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
